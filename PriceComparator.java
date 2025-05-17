@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class main {
+public class PriceComparator {
     public static void main(String[] args) {
         List<List<String>> records = new ArrayList<>();
-        try(BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Antonio\\OneDrive\\Desktop\\PriceComparatorBackend\\examples\\profi_2025-05-08.csv"))){
-            String line;
+        try(BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Antonio\\OneDrive\\Desktop\\PriceComparatorBackend\\prices\\profi_2025-05-08.csv"))){
+            String line = br.readLine(); // skip the first line
             while ((line = br.readLine()) != null) {
                 String[] data  = line.split(";");
                 records.add(Arrays.asList(data));
@@ -18,7 +18,7 @@ public class main {
         }
 
         for(List<String> record: records){
-            System.out.print(record.get(1) +" "); // luam a 2 coloana
+            System.out.print(record +" "); // luam a 2 coloana
         }
     }
 }
